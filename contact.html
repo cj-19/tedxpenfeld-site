@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — TEDxPenfeld</title>
+<meta name="description" content="Nous écrire, proposer un soutien, rejoindre l'équipe.">
+<link rel="canonical" href="https://tedxpenfeld.com/contact.html">
+<meta property="og:title" content="Contact — TEDxPenfeld">
+<meta property="og:description" content="Nous écrire, proposer un soutien, rejoindre l'équipe.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tedxpenfeld.com/contact.html">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="saut-contenu" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <div class="entete__interieur">
+    <!-- Logo officiel, produit avec le générateur TEDx. Ne jamais le redessiner. -->
+    <a class="marque" href="index.html">
+      <img src="assets/img/logo-tedxpenfeld.svg" alt="TEDxPenfeld" width="230" height="47">
+    </a>
+
+    <button class="nav-bouton" type="button" aria-expanded="false" aria-controls="nav-principale">Menu</button>
+
+    <nav class="nav" id="nav-principale" aria-label="Navigation principale">
+      <a href="le-projet.html">Le projet</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="nous-soutenir.html">Nous soutenir</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a class="langue" href="en/index.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <section class="bandeau">
+    <div class="contenu">
+      <h1>Contact</h1>
+      <hr class="trait">
+      <p class="chapo">Nous lisons tout et nous répondons.</p>
+      <p><strong>Vous souhaitez nous soutenir</strong>, mettre à disposition un lieu, du matériel ou une compétence — dites-nous ce que vous pouvez faire, même si vous n'êtes pas sûr que cela nous serve.</p>
+      <p><strong>Vous souhaitez rejoindre l'équipe.</strong> Nous accueillons les contributions, ponctuelles ou durables, avec ou sans rattachement à un pôle. Dites-nous ce qui vous intéresse.</p>
+      <p><strong>Vous êtes journaliste.</strong> Écrivez-nous&nbsp;: toutes nos relations presse passent par une procédure encadrée par TED.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="contenu">
+      <h2>Nous écrire</h2>
+
+      <!-- FORMULAIRE DE CONTACT — remplacer l'attribut action par l'URL du service
+           de traitement de formulaire retenu. -->
+      <form class="formulaire" action="#REMPLACER-PAR-URL-FORMULAIRE" method="POST">
+        <label for="contact-nom">Votre nom</label>
+        <input type="text" id="contact-nom" name="nom" required autocomplete="name">
+
+        <label for="contact-email">Votre adresse e-mail</label>
+        <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="prenom@exemple.fr">
+
+        <label for="contact-objet">Objet</label>
+        <input type="text" id="contact-objet" name="objet" required>
+
+        <label for="contact-message">Votre message</label>
+        <textarea id="contact-message" name="message" required></textarea>
+
+        <div class="consentement">
+          <input type="checkbox" id="rgpd-contact" name="consentement" value="1" required>
+          <label for="rgpd-contact">Les informations transmises sont utilisées par Penfeld Conférences pour répondre à votre message et, le cas échéant, assurer le suivi de nos échanges. Elles ne sont ni vendues, ni transmises à des tiers. Vous pouvez demander leur rectification ou leur suppression à tout moment en écrivant à [adresse de contact].</label>
+        </div>
+
+        <button class="bouton" type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="contenu">
+      <h2>Recevoir la lettre</h2>
+      <p>Toutes les trois semaines, où nous en sommes&nbsp;: ce qui avance, ce qui coince, ce que nous cherchons.</p>
+
+      <!-- FORMULAIRE NEWSLETTER — remplacer l'attribut action par l'URL fournie par
+           l'outil de newsletter. Le champ email doit conserver name="EMAIL" avec Brevo. -->
+      <form class="formulaire" action="#REMPLACER-PAR-URL-BREVO" method="POST">
+        <label for="email-lettre">Votre adresse e-mail</label>
+        <input type="email" id="email-lettre" name="EMAIL" required autocomplete="email" placeholder="prenom@exemple.fr">
+
+        <div class="consentement">
+          <input type="checkbox" id="rgpd-lettre" name="OPT_IN" value="1" required>
+          <label for="rgpd-lettre">En vous inscrivant, vous acceptez que Penfeld Conférences conserve votre adresse pour vous envoyer cette lettre. Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque envoi, ou en écrivant à [adresse de contact]. Vos données ne sont ni vendues, ni transmises à des tiers.</label>
+        </div>
+
+        <button class="bouton" type="submit">Je m'inscris</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="contenu--large">
+    <!-- MENTION OBLIGATOIRE — doit figurer sur toutes les pages. -->
+    <p class="pied__licence">This independent TEDx event is operated under license from TED.</p>
+    <p class="pied__licence-fr">Cet événement TEDx indépendant est exploité sous licence de TED.</p>
+
+    <ul class="pied__nav">
+      <li><a href="le-projet.html">Le projet</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="nous-soutenir.html">Nous soutenir</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="en/index.html" hreflang="en" lang="en">English</a></li>
+    </ul>
+
+    <p class="pied__bas">TEDxPenfeld · Brest · Mars 2027 — organisé par Penfeld Conférences, association loi 1901.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

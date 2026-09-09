@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Domaine confirmé : tedxpenfeld.com. Ce n'est pas un placeholder. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://tedxpenfeld.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tedxpenfeld.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tedxpenfeld.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tedxpenfeld.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/le-projet.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tedxpenfeld.com/le-projet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tedxpenfeld.com/en/the-project.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tedxpenfeld.com/le-projet.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/a-propos.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tedxpenfeld.com/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tedxpenfeld.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tedxpenfeld.com/a-propos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/nous-soutenir.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/mentions-legales.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tedxpenfeld.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tedxpenfeld.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tedxpenfeld.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/en/the-project.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tedxpenfeld.com/en/the-project.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tedxpenfeld.com/le-projet.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tedxpenfeld.com/le-projet.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://tedxpenfeld.com/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tedxpenfeld.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tedxpenfeld.com/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tedxpenfeld.com/a-propos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
