@@ -1,0 +1,27 @@
+Fichiers de logo attendus dans ce dossier
+=========================================
+
+Tous doivent provenir du GÉNÉRATEUR OFFICIEL TEDx.
+Ne jamais redessiner le logo, ne jamais le recomposer à la main,
+ne jamais utiliser le logo TED.
+
+  logo-tedxpenfeld.svg         Version pour fond clair, TEDx en rouge et Penfeld en noir.
+                               C'est celle qu'utilise le site.
+                               LE NOM DE FICHIER EST OBLIGATOIRE, le site le référence tel quel.
+
+  logo-tedxpenfeld-blanc.svg   Version pour fond sombre, Penfeld en blanc.
+                               Nécessaire pour le pied de page, le fond de scène,
+                               et tout support sombre.
+
+  favicon.svg et favicon.png   À générer à partir du logo.
+
+Rappels de conformité
+---------------------
+- Le logo se pose sur du BLANC ou du NOIR uniquement, jamais sur une couleur.
+  C'est la raison pour laquelle l'en-tête du site est blanc alors que le corps
+  du site est en béton clair.
+- Une zone de protection reste libre autour du logo. Rien ne s'en approche.
+- Le logo d'un partenaire est toujours plus petit que le logo TEDxPenfeld.
+- Aucun logo partenaire en page d'accueil.
+- Tant que le fichier SVG n'est pas déposé ici, l'en-tête affiche le texte de
+  remplacement « TEDxPenfeld ». Le site reste lisible, mais incomplet.
