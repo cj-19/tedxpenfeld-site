@@ -1,0 +1,346 @@
+/* ==========================================================================
+   TEDxPenfeld — direction artistique « La faille »
+   Identité retenue. Esquisse B : diagonale structurante, dominante claire.
+   La version neutre d'origine est archivée dans style-neutre.css.
+
+   Principe : une grille orthogonale stricte — le plan de la reconstruction —
+   traversée par une seule diagonale, la Penfeld, qui lui est antérieure.
+   Un cadre, et ce qui lui échappe.
+
+   Conformité : rouge TED #EB0028 en accent uniquement, jamais en aplat de
+   fond derrière le logo. Polices système, aucune ressource externe.
+   ========================================================================== */
+
+:root {
+  --rouge: #eb0028;
+
+  /* Le béton clair des façades de la reconstruction — couleur dominante. */
+  --beton: #f1eee8;
+  --beton-clair: #faf8f5;
+
+  /* Le gris-vert sombre de l'eau de la rade. Jamais le noir pur. */
+  --ardoise: #232b2c;
+  --ardoise-moyen: #4a5455;
+  --ardoise-clair: #8b9394;
+
+  --texte: #232b2c;
+  --gris: #5c6566;
+  --gris-clair: #d9d4ca;
+  --blanc: #ffffff;
+
+  /* L'angle de la faille. Une seule valeur, partout. */
+  --angle: -24deg;
+
+  --largeur-texte: 720px;
+  --largeur-large: 1060px;
+
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--texte);
+  background: var(--beton);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Accessibilité ------------------------------------------------------ */
+
+.saut-contenu {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--ardoise); color: #fff; padding: 12px 20px; z-index: 100;
+}
+.saut-contenu:focus { left: 0; }
+
+:focus-visible { outline: 3px solid var(--rouge); outline-offset: 2px; }
+
+/* --- Structure ---------------------------------------------------------- */
+
+.contenu { max-width: var(--largeur-texte); margin: 0 auto; padding: 0 24px; }
+.contenu--large { max-width: var(--largeur-large); margin: 0 auto; padding: 0 24px; }
+
+section { padding: 64px 0; position: relative; }
+
+/* La trame : filets verticaux réguliers, très discrets.
+   C'est le plan orthogonal, présent sans être décoratif. */
+section + section { border-top: 1px solid var(--gris-clair); }
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent calc(12.5% - 1px),
+    rgba(35, 43, 44, 0.045) calc(12.5% - 1px),
+    rgba(35, 43, 44, 0.045) 12.5%
+  );
+  z-index: 0;
+}
+section > * { position: relative; z-index: 1; }
+
+/* --- En-tête ------------------------------------------------------------ */
+
+.entete {
+  border-bottom: 1px solid var(--gris-clair);
+  position: sticky; top: 0;
+  /* Blanc, et non béton : les règles TED imposent que le logo repose sur un
+     fond blanc ou noir, jamais sur une couleur. L'en-tête fait donc exception
+     à la dominante béton du reste du site. */
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: saturate(180%) blur(6px);
+  z-index: 50;
+}
+
+.entete__interieur {
+  max-width: var(--largeur-large); margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+
+/* Le logo officiel, produit avec le générateur TEDx.
+   Le padding tient lieu de zone de protection : rien ne s'en approche. */
+.marque {
+  display: block;
+  text-decoration: none;
+  padding: 6px 14px 6px 0;
+  line-height: 0;
+}
+.marque img {
+  display: block;
+  height: 34px;
+  width: auto;
+}
+@media (max-width: 640px) {
+  .marque img { height: 26px; }
+}
+
+.nav { display: flex; align-items: center; gap: 26px; }
+.nav a {
+  color: var(--texte); text-decoration: none; font-size: 15px;
+  letter-spacing: 0.01em; padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { border-bottom-color: var(--ardoise-clair); }
+.nav a[aria-current="page"] { border-bottom-color: var(--rouge); }
+
+.langue {
+  font-size: 13px; color: var(--gris); text-decoration: none;
+  border: 1px solid var(--gris-clair); padding: 4px 10px; border-radius: 0;
+}
+.langue:hover { border-color: var(--ardoise); color: var(--ardoise); }
+
+.nav-bouton {
+  display: none; background: none; border: 1px solid var(--gris-clair);
+  border-radius: 0; padding: 8px 12px; font-size: 15px;
+  font-family: inherit; cursor: pointer; color: var(--texte);
+}
+
+@media (max-width: 760px) {
+  .nav-bouton { display: block; }
+  .nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--beton); border-bottom: 1px solid var(--gris-clair);
+    flex-direction: column; align-items: flex-start; gap: 0;
+    padding: 8px 24px 20px;
+  }
+  .nav.est-ouvert { display: flex; }
+  .nav a { padding: 10px 0; width: 100%; }
+}
+
+/* --- Titres et texte ---------------------------------------------------- */
+
+h1, h2, h3 { line-height: 1.02; font-weight: 700; letter-spacing: -0.045em; margin: 0 0 18px; }
+h1 { font-size: 54px; }
+h2 { font-size: 34px; margin-top: 8px; }
+h3 { font-size: 21px; letter-spacing: -0.02em; margin-top: 34px; }
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  h1 { font-size: 34px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 19px; }
+  section { padding: 44px 0; }
+}
+
+p { margin: 0 0 20px; }
+a { color: var(--texte); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--rouge); }
+
+.chapo { font-size: 22px; line-height: 1.5; }
+.sous-titre { font-size: 26px; font-weight: 400; color: var(--gris); margin: -8px 0 30px; }
+.mention { font-size: 15px; color: var(--gris); }
+
+/* LA FAILLE — le trait rouge devient la diagonale.
+   Un seul angle, réutilisé partout dans le site. */
+.trait {
+  width: 100px; height: 7px; background: var(--rouge);
+  border: 0; margin: 0 0 30px;
+  transform: skewX(var(--angle));
+  transform-origin: left center;
+}
+
+ul { padding-left: 22px; margin: 0 0 20px; }
+li { margin-bottom: 10px; }
+strong { font-weight: 700; }
+
+/* --- Bandeau d'accueil -------------------------------------------------- */
+
+.bandeau {
+  padding: 88px 0 64px;
+  background: var(--beton-clair);
+  overflow: hidden;
+}
+
+/* La faille traverse le bandeau : une bande d'ardoise en diagonale,
+   très basse en opacité, qui coupe la trame sans la respecter. */
+.bandeau::after {
+  content: "";
+  position: absolute;
+  top: -40%; bottom: -40%;
+  right: -8%;
+  width: 44%;
+  background: rgba(35, 43, 44, 0.10);
+  transform: skewX(var(--angle));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bandeau h1 { font-size: 64px; margin-bottom: 10px; }
+.bandeau .accroche { font-size: 27px; font-weight: 400; color: var(--gris); margin: 0 0 34px; }
+
+.bandeau .cles {
+  font-size: 19px; font-weight: 700;
+  border-left: 6px solid var(--rouge);
+  padding-left: 20px; margin: 34px 0;
+}
+
+@media (max-width: 640px) {
+  .bandeau { padding: 48px 0 40px; }
+  .bandeau h1 { font-size: 36px; }
+  .bandeau .accroche { font-size: 21px; }
+  .bandeau::after { width: 68%; right: -24%; }
+}
+
+/* --- Blocs -------------------------------------------------------------- */
+
+.encadre {
+  background: var(--blanc);
+  border: 1px solid var(--gris-clair);
+  border-radius: 0;
+  padding: 30px;
+}
+.encadre p:last-child { margin-bottom: 0; }
+
+/* Les textes officiels TED : posés, encadrés, jamais mis en scène. */
+.officiel {
+  border-left: 4px solid var(--ardoise);
+  padding-left: 24px;
+  font-size: 17px;
+  color: var(--ardoise-moyen);
+}
+.officiel p:last-child { margin-bottom: 0; }
+
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 36px; }
+.grille h3 { margin-top: 0; }
+.grille p { font-size: 17px; }
+
+.lien-suite {
+  display: inline-block; font-weight: 700; text-decoration: none;
+  border-bottom: 3px solid var(--rouge); padding-bottom: 2px;
+}
+.lien-suite:hover { border-bottom-color: var(--ardoise); }
+
+/* Prêt pour les photographies, quand elles existeront :
+   coupe sur le même angle que la faille. */
+.image-faille {
+  display: block; width: 100%; height: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  filter: contrast(1.08) saturate(0.82);
+}
+
+/* --- Formulaires -------------------------------------------------------- */
+
+.formulaire { max-width: 520px; }
+
+label { display: block; font-size: 14px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 7px; }
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%; font-family: inherit; font-size: 17px; padding: 13px 15px;
+  border: 1px solid var(--ardoise-clair); border-radius: 0;
+  background: var(--blanc); color: var(--texte); margin-bottom: 18px;
+}
+input:focus, textarea:focus { border-color: var(--ardoise); }
+textarea { min-height: 160px; resize: vertical; }
+
+.consentement {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 14px; color: var(--gris); line-height: 1.5; margin-bottom: 22px;
+}
+.consentement input { margin-top: 4px; flex-shrink: 0; }
+.consentement label { font-weight: 400; font-size: 14px; margin: 0; letter-spacing: 0; }
+
+/* Le bouton porte la faille : le bord droit est coupé sur l'angle. */
+.bouton {
+  display: inline-block; background: var(--rouge); color: #fff;
+  border: 0; border-radius: 0; padding: 15px 34px 15px 28px;
+  font-family: inherit; font-size: 17px; font-weight: 700;
+  cursor: pointer; text-decoration: none;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+}
+.bouton:hover { background: #c40022; color: #fff; }
+
+/* --- Pied de page ------------------------------------------------------- */
+
+.pied {
+  background: var(--ardoise);
+  color: #c6cccc;
+  padding: 56px 0 36px;
+  font-size: 15px; line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+}
+
+/* La faille traverse aussi le pied, en miroir du bandeau. */
+.pied::before {
+  content: "";
+  position: absolute; top: -40%; bottom: -40%; left: -4%;
+  width: 26%;
+  background: rgba(255, 255, 255, 0.035);
+  transform: skewX(var(--angle));
+  pointer-events: none;
+}
+.pied > * { position: relative; }
+
+.pied a { color: #c6cccc; text-decoration: none; }
+.pied a:hover { color: #fff; text-decoration: underline; }
+
+.pied__licence { color: #fff; font-weight: 700; margin-bottom: 4px; }
+.pied__licence-fr { color: #8b9394; font-style: italic; margin-bottom: 30px; }
+
+.pied__nav {
+  display: flex; flex-wrap: wrap; gap: 8px 22px;
+  padding: 0; list-style: none; margin: 0 0 26px;
+}
+
+.pied__bas {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 20px; color: #7f8889; font-size: 14px;
+}
+
+/* --- Page 404 ----------------------------------------------------------- */
+
+.centre { text-align: center; padding: 100px 0; }
