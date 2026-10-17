@@ -1,6 +1,6 @@
 # Site TEDxPenfeld — version 1
 
-Site statique, sans framework, sans dépendance externe. Neuf pages publiées, plus une page 404.
+Site statique, sans framework, sans dépendance externe. Dix pages publiées, plus une page 404.
 Aucune police externe, aucun script tiers, aucun traceur, aucun cookie.
 
 ---
@@ -22,13 +22,14 @@ fichier `.html` (`<link rel="canonical">`, `<link rel="alternate" hreflang="…"
 ├── .nojekyll                 Désactive le traitement Jekyll de GitHub Pages
 ├── CNAME                     Domaine personnalisé (une ligne, rien d'autre)
 ├── robots.txt                Autorise l'indexation, déclare le sitemap
-├── sitemap.xml               Les neuf pages, avec hreflang FR/EN
+├── sitemap.xml               Les dix pages, avec hreflang FR/EN
 ├── README.md                 Ce fichier
 ├── 404.html                  Page d'erreur (servie automatiquement par GitHub Pages)
 │
 ├── index.html                FR — Accueil
 ├── le-projet.html            FR — Le projet
 ├── a-propos.html             FR — À propos
+├── proposer-une-idee.html    FR — Appel à idées (formulaire de proposition)
 ├── nous-soutenir.html        FR — Nous soutenir
 ├── contact.html              FR — Contact (deux formulaires)
 ├── mentions-legales.html     FR — Mentions légales
@@ -44,7 +45,7 @@ fichier `.html` (`<link rel="canonical">`, `<link rel="alternate" hreflang="…"
     └── img/                  Logos officiels (voir LISEZ-MOI.txt dans ce dossier)
 ```
 
-Les pages anglaises sont volontairement plus courtes et plus stables. Tout ce qui bouge souvent — actualités, avancement, annonces — reste en français seulement. `Nous soutenir`, `Contact` et `Mentions légales` n'ont pas de version anglaise : les liens anglais pointent vers les pages françaises correspondantes.
+Les pages anglaises sont volontairement plus courtes et plus stables. Tout ce qui bouge souvent — actualités, avancement, annonces — reste en français seulement. `Proposer une idée`, `Nous soutenir`, `Contact` et `Mentions légales` n'ont pas de version anglaise : les liens anglais pointent vers les pages françaises correspondantes.
 
 ---
 
@@ -110,6 +111,10 @@ Le fichier `.nojekyll` est présent pour que GitHub Pages serve les fichiers tel
 - Adresse de contact dans le texte RGPD du formulaire de lettre d'information
 - `action="#REMPLACER-PAR-URL-FORMULAIRE"` — URL du service de traitement du formulaire de contact
 - `action="#REMPLACER-PAR-URL-BREVO"` — URL fournie par l'outil de newsletter
+
+**`proposer-une-idee.html`**
+- Adresse de contact dans le texte RGPD du formulaire
+- `action="#REMPLACER-PAR-URL-FORMULAIRE"` — même service que le formulaire de contact
 
 **`index.html` et `en/index.html`**
 - `action="#REMPLACER-PAR-URL-BREVO"` — URL fournie par l'outil de newsletter
