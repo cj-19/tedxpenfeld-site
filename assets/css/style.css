@@ -137,6 +137,13 @@ section > * { position: relative; z-index: 1; }
 .nav a:hover { border-bottom-color: var(--ardoise-clair); }
 .nav a[aria-current="page"] { border-bottom-color: var(--rouge); }
 
+.nav .nav__candidater {
+  background: var(--rouge); color: #fff; font-weight: 700;
+  padding: 8px 16px; border-bottom: 0;
+}
+.nav .nav__candidater:hover { background: #c40022; color: #fff; }
+.nav .nav__candidater[aria-current="page"] { background: var(--ardoise); }
+
 .langue {
   font-size: 13px; color: var(--gris); text-decoration: none;
   border: 1px solid var(--gris-clair); padding: 4px 10px; border-radius: 0;
@@ -233,6 +240,23 @@ strong { font-weight: 700; }
   .bandeau h1 { font-size: 36px; }
   .bandeau .accroche { font-size: 21px; }
   .bandeau::after { width: 68%; right: -24%; }
+}
+
+/* --- Affiche d'accueil -------------------------------------------------
+   Fond blanc : le logo officiel ne se pose que sur du blanc ou du noir.
+   Aucune diagonale ici, pour respecter la zone de protection du logo. */
+
+.affiche { background: var(--blanc); text-align: center; padding: 96px 0 84px; border-bottom: 1px solid var(--gris-clair); }
+.affiche::before { display: none; } /* pas de trame autour du logo */
+.affiche h1 { margin: 0 auto 40px; line-height: 0; }
+.affiche h1 img { width: 100%; max-width: 460px; height: auto; }
+.affiche__titre { font-size: 34px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; }
+.affiche__infos { font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris); margin-bottom: 34px; }
+.affiche__mention { font-size: 15px; color: var(--gris); margin: 18px 0 0; }
+@media (max-width: 640px) {
+  .affiche { padding: 56px 0 48px; }
+  .affiche__titre { font-size: 25px; }
+  .affiche__infos { font-size: 13px; letter-spacing: 0.1em; }
 }
 
 /* --- Blocs -------------------------------------------------------------- */
