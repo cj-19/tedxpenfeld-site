@@ -303,6 +303,12 @@ main > section:not(.bandeau):not(.nuit):not(.affiche) h2::before {
 .grille--portes > div { border-top: 3px solid var(--ardoise); padding-top: 16px; }
 .grille--portes h3 { margin-top: 0; }
 
+/* Talks marquants : même grille que les blocs, filet rouge en tête. */
+.grille--talks { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px 36px; margin-top: 12px; }
+.grille--talks > div { border-top: 3px solid var(--rouge); padding-top: 16px; }
+.grille--talks h3 { margin: 0 0 6px; font-size: 21px; }
+.talk__qui { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gris); margin-bottom: 10px; }
+
 /* --- Blocs -------------------------------------------------------------- */
 
 .encadre {
