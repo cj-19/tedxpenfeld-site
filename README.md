@@ -2,6 +2,7 @@
 
 Site statique, sans framework, sans dépendance externe. Sept pages publiées (cinq en français, deux en anglais), plus une page 404. Structure calquée sur TEDxRennes : peu de texte, une affiche en accueil, un seul appel à l'action (Candidater).
 Aucune police externe, aucun script tiers, aucun traceur, aucun cookie.
+Seule ressource externe : les miniatures des quatre talks de l'accueil, chargées depuis i.ytimg.com (images seules, sans script ni cookie, avec referrerpolicy=no-referrer). Pour supprimer tout appel externe, les télécharger dans assets/img/ et changer les src.
 
 ---
 
