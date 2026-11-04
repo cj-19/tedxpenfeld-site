@@ -226,6 +226,11 @@ strong { font-weight: 700; }
   z-index: 0;
 }
 
+.bandeau .ouverture {
+  display: inline-block; font-size: 15px; font-weight: 700;
+  border-left: 4px solid var(--rouge); padding-left: 14px; margin: 6px 0 0;
+}
+
 .bandeau h1 { font-size: 64px; margin-bottom: 10px; }
 .bandeau .accroche { font-size: 27px; font-weight: 400; color: var(--gris); margin: 0 0 34px; }
 

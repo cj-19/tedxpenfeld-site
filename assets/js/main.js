@@ -42,3 +42,14 @@
     });
   });
 })();
+
+/* Date d'ouverture : le texte « ouvre le … » bascule de lui-même le jour venu
+   (data-ouverture="AAAA-MM-JJ", texte suivant dans data-apres). */
+(function () {
+  var elements = document.querySelectorAll('[data-ouverture]');
+  Array.prototype.forEach.call(elements, function (el) {
+    if (new Date() >= new Date(el.getAttribute('data-ouverture') + 'T00:00:00')) {
+      el.textContent = el.getAttribute('data-apres');
+    }
+  });
+})();
