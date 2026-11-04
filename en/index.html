@@ -42,13 +42,21 @@
 </header>
 
 <main id="contenu">
-  <section class="affiche">
-    <div class="contenu">
-      <h1><img src="../assets/img/logo-tedxpenfeld.png" alt="TEDxPenfeld" width="460" height="60"></h1>
-      <p class="affiche__titre">An evening of ideas in Brest</p>
-      <p class="affiche__infos">March 2027 · Brest, France · One hundred seats</p>
+  <section class="nuit">
+    <div class="contenu--large">
+      <h1 class="nuit__logo"><img src="../assets/img/logo-tedxpenfeld-blanc.png" alt="TEDxPenfeld" width="460" height="60"></h1>
+      <p class="nuit__titre">An evening of ideas in Brest</p>
+      <p class="nuit__infos">March 2027 · Brest, France · One hundred seats</p>
       <p><a class="bouton" href="../candidater.html">Apply to speak</a></p>
-      <p class="affiche__mention">Speaker applications are open (form in French).</p>
+      <p class="nuit__mention">Speaker applications are open (form in French).</p>
+
+      <!-- LES DEUX RIVES — une seule diagonale : la Penfeld, sur l'angle de --angle. -->
+      <div class="rives" role="group" aria-label="The worlds represented on stage">
+        <ul class="rive rive--gauche"><li>The sea</li><li>Health</li><li>Research</li></ul>
+        <span class="rives__penfeld" aria-hidden="true"></span>
+        <ul class="rive rive--droite"><li>Digital</li><li>Industry</li><li>Culture</li></ul>
+      </div>
+      <p class="rives__legende">One seat per world. One evening to cross.</p>
     </div>
   </section>
 
@@ -105,6 +113,7 @@
 
 <footer class="pied">
   <div class="contenu--large">
+    <p class="pied__logo"><img src="../assets/img/logo-tedxpenfeld-blanc.png" alt="TEDxPenfeld" width="263" height="34"></p>
     <!-- MANDATORY DISCLAIMER — must appear on every page. -->
     <p class="pied__licence">This independent TEDx event is operated under license from TED.</p>
 

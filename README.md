@@ -193,7 +193,8 @@ Une grille rigoureuse, coupée par une seule diagonale : un cadre, et ce qui lui
 |---|---|---|
 | Béton | `#f1eee8` | Fond dominant |
 | Béton clair | `#faf8f5` | Bandeau |
-| Ardoise | `#232b2c` | Texte et pied de page. Jamais le noir pur |
+| Ardoise | `#232b2c` | Texte. Jamais le noir pur pour le texte |
+| Nuit | `#000000` | Affiche d'accueil et pied de page, seuls fonds sombres (logo blanc autorisé) |
 | Rouge TED | `#eb0028` | Accent seul, jamais en fond derrière le logo |
 
 **Les photographies.** La classe `.image-faille` est prête : coupe sur le même angle,
@@ -207,6 +208,21 @@ bateaux. Les vues aériennes. L'imagerie militaire ou de surveillance. Le bleu m
 **Un régime sombre** existe en réserve pour le fond de scène uniquement, où
 l'obscurité est la règle de toute façon. Il ne descend pas sur les supports imprimés :
 une dominante sombre coûte trois fois plus d'encre et rend mal sur papier non couché.
+
+### Évolution — « La traversée » (novembre 2026)
+
+Prolongement de « La faille », sans en changer les règles. TEDxPenfeld est **un soir**
+où l'on passe d'une rive à l'autre.
+
+- **La nuit encadre le jour.** L'affiche d'accueil (`.nuit`) et le pied de page sont en
+  noir pur (`--nuit: #000`), avec `logo-tedxpenfeld-blanc.png` : le noir pur est le seul
+  fond sombre autorisé pour le logo. Le contenu reste sur la dominante béton.
+- **Les deux rives.** Sur l'affiche, les mondes (mer, santé, recherche / numérique,
+  industrie, culture) se répartissent de part et d'autre d'une seule diagonale rouge,
+  la Penfeld (`.rives__penfeld`), sur `--angle`. C'est la seule diagonale de l'affiche.
+- **Les traversées numérotées.** Chaque section de contenu porte un numéro rouge
+  (01, 02…), généré en CSS (compteur `traversee`) : aucun texte à maintenir.
+- **La grille affirmée.** Les blocs (`.grille--portes`) prennent un filet d'ardoise en tête.
 
 ### Archive
 

@@ -242,22 +242,66 @@ strong { font-weight: 700; }
   .bandeau::after { width: 68%; right: -24%; }
 }
 
-/* --- Affiche d'accueil -------------------------------------------------
-   Fond blanc : le logo officiel ne se pose que sur du blanc ou du noir.
-   Aucune diagonale ici, pour respecter la zone de protection du logo. */
+/* --- LA TRAVERSÉE — direction artistique (novembre 2026) -----------------
+   Un soir où l'on passe d'une rive à l'autre. La nuit (noir pur) encadre le
+   site : affiche d'accueil et pied de page. Le jour (béton) porte le contenu.
+   Le logo n'est posé que sur du blanc (en-tête) ou du noir pur (nuit, pied). */
 
-.affiche { background: var(--blanc); text-align: center; padding: 96px 0 84px; border-bottom: 1px solid var(--gris-clair); }
-.affiche::before { display: none; } /* pas de trame autour du logo */
-.affiche h1 { margin: 0 auto 40px; line-height: 0; }
-.affiche h1 img { width: 100%; max-width: 460px; height: auto; }
-.affiche__titre { font-size: 34px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; }
-.affiche__infos { font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris); margin-bottom: 34px; }
-.affiche__mention { font-size: 15px; color: var(--gris); margin: 18px 0 0; }
-@media (max-width: 640px) {
-  .affiche { padding: 56px 0 48px; }
-  .affiche__titre { font-size: 25px; }
-  .affiche__infos { font-size: 13px; letter-spacing: 0.1em; }
+:root { --nuit: #000; }
+
+.nuit {
+  background: var(--nuit); color: #fff; text-align: center;
+  padding: 104px 0 72px; overflow: hidden;
 }
+.nuit::before { display: none; }              /* pas de trame autour du logo */
+.nuit + section { border-top: 0; }
+.nuit__logo { margin: 0 auto 56px; line-height: 0; }
+.nuit__logo img { width: 100%; max-width: 460px; height: auto; }
+.nuit__titre { font-size: 46px; font-weight: 700; letter-spacing: -0.045em; line-height: 1.05; margin-bottom: 14px; }
+.nuit__infos { font-size: 14px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #9aa1a2; margin-bottom: 38px; }
+.nuit__mention { font-size: 15px; color: #9aa1a2; margin: 18px 0 0; }
+
+/* Les deux rives : les mondes de part et d'autre d'une seule diagonale. */
+.rives {
+  display: grid; grid-template-columns: 1fr 120px 1fr; align-items: center;
+  max-width: 760px; margin: 84px auto 0;
+}
+.rive { list-style: none; margin: 0; padding: 0; }
+.rive li { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.25; margin: 0; color: #fff; }
+.rive li:nth-child(2) { color: #c6cccc; }
+.rive li:nth-child(3) { color: #8b9394; }
+.rive--gauche { text-align: right; }
+.rive--droite { text-align: left; }
+.rives__penfeld {
+  justify-self: center; display: block;
+  width: 5px; height: 150px; background: var(--rouge);
+  transform: skewX(var(--angle));
+}
+.rives__legende { margin: 34px 0 0; font-size: 15px; color: #9aa1a2; font-style: italic; }
+
+@media (max-width: 640px) {
+  .nuit { padding: 60px 0 52px; }
+  .nuit__logo { margin-bottom: 40px; }
+  .nuit__titre { font-size: 30px; }
+  .nuit__infos { font-size: 12px; letter-spacing: 0.12em; }
+  .rives { grid-template-columns: 1fr 56px 1fr; margin-top: 56px; }
+  .rive li { font-size: 17px; }
+  .rives__penfeld { height: 96px; width: 4px; }
+}
+
+/* Les traversées numérotées : chaque section porte son numéro, en rouge. */
+main { counter-reset: traversee; }
+main > section:not(.bandeau):not(.nuit):not(.affiche) { counter-increment: traversee; }
+main > section:not(.bandeau):not(.nuit):not(.affiche) h2::before {
+  content: counter(traversee, decimal-leading-zero);
+  display: block; margin-bottom: 12px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.16em;
+  color: var(--rouge);
+}
+
+/* La grille affirmée : chaque bloc est un îlot du plan, filet d'ardoise en tête. */
+.grille--portes > div { border-top: 3px solid var(--ardoise); padding-top: 16px; }
+.grille--portes h3 { margin-top: 0; }
 
 /* --- Blocs -------------------------------------------------------------- */
 
@@ -339,7 +383,7 @@ textarea { min-height: 160px; resize: vertical; }
 /* --- Pied de page ------------------------------------------------------- */
 
 .pied {
-  background: var(--ardoise);
+  background: var(--nuit);
   color: #c6cccc;
   padding: 56px 0 36px;
   font-size: 15px; line-height: 1.6;
@@ -350,9 +394,9 @@ textarea { min-height: 160px; resize: vertical; }
 /* La faille traverse aussi le pied, en miroir du bandeau. */
 .pied::before {
   content: "";
-  position: absolute; top: -40%; bottom: -40%; left: -4%;
+  position: absolute; top: -40%; bottom: -40%; right: -6%;
   width: 26%;
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(255, 255, 255, 0.05);
   transform: skewX(var(--angle));
   pointer-events: none;
 }
@@ -360,6 +404,9 @@ textarea { min-height: 160px; resize: vertical; }
 
 .pied a { color: #c6cccc; text-decoration: none; }
 .pied a:hover { color: #fff; text-decoration: underline; }
+
+.pied__logo { line-height: 0; margin: 0 0 30px; }
+.pied__logo img { height: 30px; width: auto; }
 
 .pied__licence { color: #fff; font-weight: 700; margin-bottom: 4px; }
 .pied__licence-fr { color: #8b9394; font-style: italic; margin-bottom: 30px; }
