@@ -329,6 +329,17 @@ main > section:not(.bandeau):not(.nuit):not(.affiche) h2::before {
   border-style: solid; border-width: 11px 0 11px 17px; border-color: transparent transparent transparent #fff;
 }
 
+/* Réseaux sociaux : deux cartouches, filet d'ardoise, le rouge au survol. */
+.reseaux { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+.reseau {
+  display: inline-flex; flex-direction: column; min-width: 200px;
+  padding: 14px 20px; background: var(--blanc); border: 1px solid var(--gris-clair); border-top: 3px solid var(--ardoise);
+  font-weight: 700; font-size: 19px; text-decoration: none;
+}
+.reseau span { font-weight: 400; font-size: 15px; color: var(--gris); }
+.reseau:hover { border-top-color: var(--rouge); color: var(--texte); }
+.pied__reseaux { margin: 0 0 22px; font-weight: 700; }
+
 /* --- Blocs -------------------------------------------------------------- */
 
 .encadre {

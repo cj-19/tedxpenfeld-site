@@ -2,7 +2,7 @@
 
 Site statique, sans framework, sans dépendance externe. Sept pages publiées (cinq en français, deux en anglais), plus une page 404. Structure calquée sur TEDxRennes : peu de texte, une affiche en accueil, un seul appel à l'action (Candidater).
 Aucune police externe, aucun script tiers, aucun traceur, aucun cookie.
-Seule ressource externe : les miniatures des quatre talks de l'accueil, chargées depuis i.ytimg.com (images seules, sans script ni cookie, avec referrerpolicy=no-referrer). Pour supprimer tout appel externe, les télécharger dans assets/img/ et changer les src.
+Seule ressource externe : les miniatures des six talks de l'accueil, chargées depuis i.ytimg.com (images seules, sans script ni cookie, avec referrerpolicy=no-referrer). Pour supprimer tout appel externe, les télécharger dans assets/img/ et changer les src.
 
 ---
 
@@ -110,16 +110,11 @@ Le fichier `.nojekyll` est présent pour que GitHub Pages serve les fichiers tel
 
 **`contact.html`**
 - Adresse de contact dans le texte RGPD du formulaire de contact
-- Adresse de contact dans le texte RGPD du formulaire de lettre d'information
 - `action="#REMPLACER-PAR-URL-FORMULAIRE"` — URL du service de traitement du formulaire de contact
-- `action="#REMPLACER-PAR-URL-BREVO"` — URL fournie par l'outil de newsletter
 
 **`candidater.html`**
 - Adresse de contact dans le texte RGPD de chaque formulaire
 - `action="#REMPLACER-PAR-URL-FORMULAIRE"` — même service que le formulaire de contact
-
-**`index.html` et `en/index.html`**
-- `action="#REMPLACER-PAR-URL-BREVO"` — URL fournie par l'outil de newsletter
 
 L'adresse de contact doit être au nom de l'événement, jamais une adresse personnelle.
 
