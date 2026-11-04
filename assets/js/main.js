@@ -1,5 +1,6 @@
 /* TEDxPenfeld — le strict nécessaire.
-   Un seul rôle : ouvrir et fermer la navigation sur mobile.
+   Deux rôles : ouvrir et fermer la navigation sur mobile, et empêcher
+   l'envoi d'un formulaire qui n’est pas encore relié à son service.
    Aucune dépendance, aucun traceur. */
 
 (function () {
@@ -18,5 +19,26 @@
       bouton.setAttribute('aria-expanded', 'false');
       bouton.focus();
     }
+  });
+})();
+
+/* Tant qu'un formulaire garde son action provisoire (#REMPLACER-…), l'envoi
+   est bloqué et un message s'affiche : le visiteur ne perd pas ce qu'il a écrit.
+   Ce bloc devient inactif de lui-même dès que la vraie URL est en place. */
+(function () {
+  var formulaires = document.querySelectorAll('form.formulaire');
+  Array.prototype.forEach.call(formulaires, function (form) {
+    if ((form.getAttribute('action') || '').charAt(0) !== '#') return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.querySelector('.formulaire__inactif')) return;
+      var message = document.createElement('p');
+      message.className = 'formulaire__inactif';
+      message.setAttribute('role', 'status');
+      message.textContent = document.documentElement.lang === 'en'
+        ? 'This form is not connected yet. Nothing you wrote is lost: it is still in the fields. Please come back in a few days.'
+        : 'Ce formulaire n’est pas encore relié. Rien de ce que vous avez écrit n’est perdu : tout est encore dans les champs. Revenez dans quelques jours.';
+      form.appendChild(message);
+    });
   });
 })();

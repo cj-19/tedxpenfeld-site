@@ -280,12 +280,12 @@ strong { font-weight: 700; }
 
 label { display: block; font-size: 14px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 7px; }
 
-input[type="text"], input[type="email"], input[type="url"], textarea {
+input[type="text"], input[type="email"], input[type="url"], input[type="tel"], select, textarea {
   width: 100%; font-family: inherit; font-size: 17px; padding: 13px 15px;
   border: 1px solid var(--ardoise-clair); border-radius: 0;
   background: var(--blanc); color: var(--texte); margin-bottom: 18px;
 }
-input:focus, textarea:focus { border-color: var(--ardoise); }
+input:focus, select:focus, textarea:focus { border-color: var(--ardoise); }
 textarea { min-height: 160px; resize: vertical; }
 
 .choix { border: 0; padding: 0; margin: 0 0 18px; }
@@ -299,6 +299,8 @@ textarea { min-height: 160px; resize: vertical; }
 }
 .consentement input { margin-top: 4px; flex-shrink: 0; }
 .consentement label { font-weight: 400; font-size: 14px; margin: 0; letter-spacing: 0; }
+
+.formulaire__inactif { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--rouge); background: var(--blanc); font-size: 15px; }
 
 /* Le bouton porte la faille : le bord droit est coupé sur l'angle. */
 .bouton {
