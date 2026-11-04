@@ -124,7 +124,6 @@ L'adresse de contact doit être au nom de l'événement, jamais une adresse pers
 
 **Autres emplacements en attente**
 - Commentaire `FIL DE L'ÉDITION` dans `index.html` et `THEME` dans `en/index.html` : une phrase sur le fil de l'édition, à ajouter une fois le thème arrêté.
-- Fichiers de logo dans `assets/img/` : l'en-tête de toutes les pages appelle désormais `logo-tedxpenfeld.svg`, à déposer là (voir la section « Le logo »).
 
 ---
 
@@ -229,10 +228,10 @@ on ne le recompose pas à la main, on n'utilise jamais le logo TED à sa place.
 
 | Fichier | Usage |
 |---|---|
-| `logo-tedxpenfeld.svg` | Version fond clair, TEDx en rouge et Penfeld en noir. C'est celle que le site appelle dans l'en-tête des dix pages. **Le nom de fichier est obligatoire**, il est référencé tel quel. |
-| `logo-tedxpenfeld-blanc.svg` | Version fond sombre, Penfeld en blanc. Pour le pied de page, le fond de scène et tout support sombre. |
+| `logo-tedxpenfeld.png` | Version fond clair, TEDx en rouge et Penfeld en noir, fond transparent. C'est celle que le site appelle dans l'en-tête de toutes les pages. **Le nom de fichier est référencé tel quel.** |
+| `logo-tedxpenfeld-blanc.png` | Version fond sombre, Penfeld en blanc, fond transparent. Uniquement sur fond **noir** : le pied de page du site est en ardoise, il ne l'utilise donc pas. |
 
-`favicon.svg` et `favicon.png` se génèrent à partir du logo, dans le même dossier.
+`favicon-32.png`, `apple-touch-icon.png` et `favicon-512.png` sont tirés de la partie « TEDx » du logo, sur fond blanc.
 `assets/img/LISEZ-MOI.txt` reprend ces consignes sur place.
 
 **Fond blanc ou noir, jamais une couleur.** Le logo ne se pose que sur du blanc ou du
