@@ -36,8 +36,8 @@
       message.className = 'formulaire__inactif';
       message.setAttribute('role', 'status');
       message.textContent = document.documentElement.lang === 'en'
-        ? 'This form is not connected yet. Nothing you wrote is lost: it is still in the fields. Please come back in a few days.'
-        : 'Ce formulaire n’est pas encore relié. Rien de ce que vous avez écrit n’est perdu : tout est encore dans les champs. Revenez dans quelques jours.';
+        ? 'This form is not connected yet. Nothing you wrote is lost: it is still in the fields. Please come back in a few days, or write to tedxpenfeld@gmail.com.'
+        : 'Ce formulaire n’est pas encore relié. Rien de ce que vous avez écrit n’est perdu : tout est encore dans les champs. Revenez dans quelques jours, ou écrivez-nous à tedxpenfeld@gmail.com.';
       form.appendChild(message);
     });
   });

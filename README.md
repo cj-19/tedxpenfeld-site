@@ -104,19 +104,15 @@ Le fichier `.nojekyll` est présent pour que GitHub Pages serve les fichiers tel
 **`mentions-legales.html`**
 - Adresse du siège social de Penfeld Conférences (section « Éditeur du site »)
 - Numéro RNA de l'association (section « Éditeur du site »)
-- Adresse de contact (section « Éditeur du site »)
 - Nom du directeur de la publication, président de l'association (section « Directeur de la publication »)
-- Adresse de contact pour l'exercice des droits RGPD (section « Données personnelles »)
 
 **`contact.html`**
-- Adresse de contact dans le texte RGPD du formulaire de contact
 - `action="#REMPLACER-PAR-URL-FORMULAIRE"` — URL du service de traitement du formulaire de contact
 
 **`candidater.html`**
-- Adresse de contact dans le texte RGPD de chaque formulaire
 - `action="#REMPLACER-PAR-URL-FORMULAIRE"` — même service que le formulaire de contact
 
-L'adresse de contact doit être au nom de l'événement, jamais une adresse personnelle.
+Adresse de contact de l'événement : tedxpenfeld@gmail.com (renseignée partout).
 
 **Autres emplacements en attente**
 - Commentaire `FIL DE L'ÉDITION` dans `index.html` et `THEME` dans `en/index.html` : une phrase sur le fil de l'édition, à ajouter une fois le thème arrêté.
