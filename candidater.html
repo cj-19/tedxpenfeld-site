@@ -73,14 +73,13 @@
   <section>
     <div class="contenu">
       <h2>Votre candidature</h2>
-      <form class="formulaire" action="https://formsubmit.co/tedxpenfeld@gmail.com" method="POST">
-        <!-- FormSubmit : envoi direct à tedxpenfeld@gmail.com, sans compte.
-             Le premier envoi déclenche un e-mail d'activation à confirmer une seule fois. -->
-        <input type="hidden" name="_subject" value="Candidature intervenant — TEDxPenfeld">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://tedxpenfeld.com/merci.html?candidature">
-        <input type="text" name="_honey" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <form class="formulaire" action="https://api.web3forms.com/submit" method="POST" data-merci="merci.html?candidature">
+        <!-- Web3Forms : envoi à tedxpenfeld@gmail.com. La clé d'accès est publique par conception.
+             L'envoi passe par main.js (fetch) puis redirige vers la page indiquée dans data-merci. -->
+        <input type="hidden" name="access_key" value="ddd0a0e6-baee-498a-8a31-25c4d2890835">
+        <input type="hidden" name="subject" value="Candidature intervenant — TEDxPenfeld">
+        <input type="hidden" name="from_name" value="Site TEDxPenfeld">
+        <input type="checkbox" name="botcheck" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <label for="cand-nom">Votre nom</label>
         <input type="text" id="cand-nom" name="Nom" required autocomplete="name">

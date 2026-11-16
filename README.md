@@ -99,7 +99,7 @@ Le fichier `.nojekyll` est présent pour que GitHub Pages serve les fichiers tel
 
 ## Formulaires
 
-Candidature et contact sont envoyés par **FormSubmit** (`https://formsubmit.co/tedxpenfeld@gmail.com`), sans compte : chaque envoi arrive par e-mail sur tedxpenfeld@gmail.com, mis en forme en tableau. Le tout premier envoi déclenche un e-mail d'activation à confirmer une fois. Après envoi, le visiteur arrive sur `merci.html`. Le champ `_honey` est un piège à robots.
+Candidature et contact sont envoyés par **Web3Forms** (`https://api.web3forms.com/submit`, clé d'accès dans le champ `access_key`, publique par conception) : chaque envoi arrive par e-mail sur tedxpenfeld@gmail.com. L'envoi passe par `main.js` (fetch) : bouton « Envoi en cours… », puis redirection vers la page indiquée dans `data-merci` (`merci.html`), ou message de secours avec l'adresse e-mail en cas d'échec. La case `botcheck` est un piège à robots. FormSubmit a été abandonné (novembre 2026) : trop instable.
 
 ## Liste des `[à compléter]` restants
 

@@ -53,3 +53,36 @@
     }
   });
 })();
+
+/* Envoi des formulaires (Web3Forms) sans quitter le site : bouton « Envoi en cours… »,
+   page de remerciement si tout va bien, message de secours sinon, sans perte de saisie. */
+(function () {
+  if (!window.fetch || !window.FormData) return;
+  var formulaires = document.querySelectorAll('form[data-merci]');
+  Array.prototype.forEach.call(formulaires, function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var bouton = form.querySelector('[type="submit"]');
+      var libelle = bouton.textContent;
+      var ancien = form.querySelector('.formulaire__inactif');
+      if (ancien) ancien.parentNode.removeChild(ancien);
+      bouton.disabled = true;
+      bouton.textContent = 'Envoi en cours…';
+      fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || !data.success) throw new Error('refus');
+          window.location.href = form.getAttribute('data-merci');
+        })
+        .catch(function () {
+          bouton.disabled = false;
+          bouton.textContent = libelle;
+          var message = document.createElement('p');
+          message.className = 'formulaire__inactif';
+          message.setAttribute('role', 'alert');
+          message.textContent = 'L’envoi n’a pas abouti. Rien de ce que vous avez écrit n’est perdu : réessayez dans un instant, ou écrivez-nous à tedxpenfeld@gmail.com.';
+          form.appendChild(message);
+        });
+    });
+  });
+})();
