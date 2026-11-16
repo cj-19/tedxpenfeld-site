@@ -106,8 +106,6 @@ Candidature et contact sont envoyés par **FormSubmit** (`https://formsubmit.co/
 À renseigner par l'équipe avant la mise en ligne.
 
 **`mentions-legales.html`**
-- Adresse du siège social de Penfeld Conférences (section « Éditeur du site »)
-- Numéro RNA de l'association (section « Éditeur du site »)
 - Nom du directeur de la publication, président de l'association (section « Directeur de la publication »)
 
 **`contact.html`**
