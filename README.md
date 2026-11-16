@@ -106,7 +106,6 @@ Candidature et contact sont envoyés par **FormSubmit** (`https://formsubmit.co/
 À renseigner par l'équipe avant la mise en ligne.
 
 **`mentions-legales.html`**
-- Nom du directeur de la publication, président de l'association (section « Directeur de la publication »)
 
 **`contact.html`**
 
