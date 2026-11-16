@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merci — TEDxPenfeld</title>
+<meta name="description" content="Votre envoi est bien parti.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://tedxpenfeld.com/merci.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+</head>
+<body>
+
+<a class="saut-contenu" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <div class="entete__interieur">
+    <!-- Logo officiel, produit avec le générateur TEDx. Ne jamais le redessiner. -->
+    <a class="marque" href="index.html">
+      <img src="assets/img/logo-tedxpenfeld.png" alt="TEDxPenfeld" width="263" height="34">
+    </a>
+
+    <button class="nav-bouton" type="button" aria-expanded="false" aria-controls="nav-principale">Menu</button>
+
+    <nav class="nav" id="nav-principale" aria-label="Navigation principale">
+      <a href="a-propos.html">À propos</a>
+      <a href="nous-soutenir.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav__candidater" href="candidater.html">Candidater</a>
+      <a class="langue" href="en/index.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="bandeau">
+    <div class="contenu">
+      <h1>Merci&nbsp;!</h1>
+      <hr class="trait">
+      <p class="chapo" id="merci-texte">C'est bien parti. Nous lisons tout et nous vous répondons rapidement.</p>
+      <p><a class="bouton" href="index.html">Retour à l'accueil</a></p>
+    </div>
+  </section>
+  <script>
+    if (location.search.indexOf('candidature') !== -1) {
+      document.getElementById('merci-texte').textContent =
+        "Votre candidature est bien arrivée. L'équipe de curation lit chaque proposition : nous revenons vers vous dès que possible. Pensez à suivre le projet sur Instagram et LinkedIn.";
+    }
+  </script>
+</main>
+
+<footer class="pied">
+  <div class="contenu--large">
+    <p class="pied__logo"><img src="assets/img/logo-tedxpenfeld-blanc.png" alt="TEDxPenfeld" width="263" height="34"></p>
+    <!-- MENTION OBLIGATOIRE — doit figurer sur toutes les pages. -->
+    <p class="pied__licence">This independent TEDx event is operated under license from TED.</p>
+    <p class="pied__licence-fr">Cet événement TEDx indépendant est exploité sous licence de TED.</p>
+
+    <p class="pied__reseaux"><a href="https://www.instagram.com/tedxpenfeld/" rel="noopener" target="_blank">Instagram</a> · <a href="https://www.linkedin.com/company/tedxpenfeld/" rel="noopener" target="_blank">LinkedIn</a></p>
+
+    <ul class="pied__nav">
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="candidater.html">Candidater</a></li>
+      <li><a href="nous-soutenir.html">Partenaires</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="en/index.html" hreflang="en" lang="en">English</a></li>
+    </ul>
+
+    <p class="pied__bas">TEDxPenfeld · Brest · Mars 2027 — organisé par Penfeld Conférences, association loi 1901.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -73,48 +73,51 @@
   <section>
     <div class="contenu">
       <h2>Votre candidature</h2>
-
-      <!-- FORMULAIRE CANDIDATURE INTERVENANT — remplacer l'attribut action par l'URL du service
-           de traitement de formulaire retenu (le même que celui de la page Contact). -->
-      <form class="formulaire" action="#REMPLACER-PAR-URL-FORMULAIRE" method="POST">
-        <input type="hidden" name="formulaire" value="Candidature intervenant">
+      <form class="formulaire" action="https://formsubmit.co/tedxpenfeld@gmail.com" method="POST">
+        <!-- FormSubmit : envoi direct à tedxpenfeld@gmail.com, sans compte.
+             Le premier envoi déclenche un e-mail d'activation à confirmer une seule fois. -->
+        <input type="hidden" name="_subject" value="Candidature intervenant — TEDxPenfeld">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://tedxpenfeld.com/merci.html?candidature">
+        <input type="text" name="_honey" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <label for="cand-nom">Votre nom</label>
-        <input type="text" id="cand-nom" name="nom" required autocomplete="name">
+        <input type="text" id="cand-nom" name="Nom" required autocomplete="name">
 
         <label for="cand-email">Votre adresse e-mail</label>
         <input type="email" id="cand-email" name="email" required autocomplete="email" placeholder="prenom@exemple.fr">
 
         <label for="cand-lien-brest">Votre lien avec Brest ou le Finistère</label>
-        <input type="text" id="cand-lien-brest" name="lien_territoire" required placeholder="Vous y vivez, y travaillez, y étudiez, en venez…">
+        <input type="text" id="cand-lien-brest" name="Lien avec Brest ou le Finistère" required placeholder="Vous y vivez, y travaillez, y étudiez, en venez…">
 
         <label for="cand-titre">Un titre provisoire</label>
-        <input type="text" id="cand-titre" name="titre" required>
+        <input type="text" id="cand-titre" name="Titre provisoire" required>
 
         <label for="cand-phrase">Votre idée, en une phrase</label>
-        <input type="text" id="cand-phrase" name="idee_une_phrase" required>
+        <input type="text" id="cand-phrase" name="L'idée en une phrase" required>
 
         <label for="cand-idee">Développez-la <span class="facultatif">(environ 300 mots&nbsp;: ce que vous avez vu, ce que vous en concluez, ce que le public devrait en retenir)</span></label>
-        <textarea id="cand-idee" name="idee" required></textarea>
+        <textarea id="cand-idee" name="L'idée développée" required></textarea>
 
         <label for="cand-pourquoi">Pourquoi vous, et pourquoi maintenant&nbsp;?</label>
-        <textarea id="cand-pourquoi" name="pourquoi" required></textarea>
+        <textarea id="cand-pourquoi" name="Pourquoi vous, pourquoi maintenant" required></textarea>
 
         <label for="cand-video">Une courte vidéo de vous <span class="facultatif">(facultatif&nbsp;: une ou deux minutes au téléphone suffisent, aucune qualité exigée)</span></label>
-        <input type="url" id="cand-video" name="video" placeholder="https://">
+        <input type="url" id="cand-video" name="Vidéo" placeholder="https://">
 
         <div class="consentement">
-          <input type="checkbox" id="cand-dispo" name="disponibilite" value="1" required>
+          <input type="checkbox" id="cand-dispo" name="Disponible en mars 2027" value="Oui" required>
           <label for="cand-dispo">Si je suis retenu, je serai disponible en mars 2027 pour la soirée, ainsi que pour les séances d'accompagnement et les répétitions qui la précèdent.</label>
         </div>
 
         <div class="consentement">
-          <input type="checkbox" id="cand-regles" name="regles" value="1" required>
+          <input type="checkbox" id="cand-regles" name="Règles TEDx comprises" value="Oui" required>
           <label for="cand-regles">J'ai compris que mon talk porte une idée, pas une promotion, et qu'il sera filmé et publié sur la chaîne TEDx.</label>
         </div>
 
         <div class="consentement">
-          <input type="checkbox" id="rgpd-cand" name="consentement" value="1" required>
+          <input type="checkbox" id="rgpd-cand" name="Consentement RGPD" value="Oui" required>
           <label for="rgpd-cand">Les informations transmises sont utilisées par Penfeld Conférences uniquement pour étudier cette candidature et vous recontacter. Elles ne sont ni vendues, ni transmises à des tiers, et sont supprimées à l'issue de la sélection si la candidature n'est pas retenue. Vous pouvez demander leur rectification ou leur suppression à tout moment en écrivant à tedxpenfeld@gmail.com.</label>
         </div>
 

@@ -97,6 +97,10 @@ Le fichier `.nojekyll` est présent pour que GitHub Pages serve les fichiers tel
 
 ---
 
+## Formulaires
+
+Candidature et contact sont envoyés par **FormSubmit** (`https://formsubmit.co/tedxpenfeld@gmail.com`), sans compte : chaque envoi arrive par e-mail sur tedxpenfeld@gmail.com, mis en forme en tableau. Le tout premier envoi déclenche un e-mail d'activation à confirmer une fois. Après envoi, le visiteur arrive sur `merci.html`. Le champ `_honey` est un piège à robots.
+
 ## Liste des `[à compléter]` restants
 
 À renseigner par l'équipe avant la mise en ligne.
@@ -107,10 +111,8 @@ Le fichier `.nojekyll` est présent pour que GitHub Pages serve les fichiers tel
 - Nom du directeur de la publication, président de l'association (section « Directeur de la publication »)
 
 **`contact.html`**
-- `action="#REMPLACER-PAR-URL-FORMULAIRE"` — URL du service de traitement du formulaire de contact
 
 **`candidater.html`**
-- `action="#REMPLACER-PAR-URL-FORMULAIRE"` — même service que le formulaire de contact
 
 Adresse de contact de l'événement : tedxpenfeld@gmail.com (renseignée partout).
 
