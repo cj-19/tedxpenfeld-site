@@ -60,10 +60,25 @@ pour atteindre la racine.
 
 Conséquence : le site fonctionne à l'identique **à la racine d'un domaine**
 (`https://tedxpenfeld.com/`) et **dans un sous-dossier**
-(par exemple l'URL provisoire `https://<compte>.github.io/<depot>/`). Il se prévisualise
-aussi **en ouvrant `index.html` directement depuis le disque**, sans serveur local :
-un double-clic sur le fichier suffit, la navigation, la feuille de style et le menu
-mobile fonctionnent.
+(par exemple l'URL provisoire `https://<compte>.github.io/<depot>/`).
+
+## Adresses sans `.html`
+
+Les liens internes s'écrivent **sans extension** : `a-propos`, `candidater`, `en/about`,
+`./` pour l'accueil, `en/` pour l'accueil anglais. GitHub Pages sert `a-propos.html`
+quand on demande `/a-propos`, et la barre d'adresse reste propre. Les balises
+`canonical`, `og:url`, `hreflang` et `sitemap.xml` suivent la même règle. Les anciennes
+adresses en `.html` continuent de fonctionner : ne pas les casser.
+
+Pour prévisualiser en local, **ne pas ouvrir les fichiers par double-clic** (les liens
+sans extension ne marchent pas depuis le disque) : lancer le serveur fourni, qui imite
+GitHub Pages (adresses sans `.html`, page 404) :
+
+```bash
+python outils/serveur-local.py
+```
+
+puis ouvrir http://127.0.0.1:8137/.
 
 Les URL absolues des balises `<link rel="canonical">`, `<link rel="alternate"
 hreflang="…">` et `<meta property="og:url">`, ainsi que `sitemap.xml` et `robots.txt`,
