@@ -86,3 +86,17 @@
     });
   });
 })();
+
+/* Liens collés sans « https:// » (ex. drive.google.com/…) : on l'ajoute, pour que
+   le navigateur ne bloque pas l'envoi. */
+(function () {
+  var champs = document.querySelectorAll('input[type="url"]');
+  Array.prototype.forEach.call(champs, function (champ) {
+    function completer() {
+      var v = champ.value.trim();
+      if (v && !/^[a-z][a-z0-9+.-]*:/i.test(v)) champ.value = 'https://' + v;
+    }
+    champ.addEventListener('blur', completer);
+    champ.addEventListener('change', completer);
+  });
+})();
